@@ -19,10 +19,22 @@ window.onscroll= () => {
     })
 }
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active')
-}
+$(document).ready(function() {
+    // Toggle navbar visibility on menu icon click
+    $('#menu-icon').click(function(event) {
+        event.stopPropagation(); // Prevents the document click handler from immediately closing the menu
+        $('.navbar').toggleClass('active');
+    });
+
+    // Close navbar when clicking outside
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.navbar').length && !$(event.target).is('#menu-icon')) {
+            $('.navbar').removeClass('active');
+        }
+    });
+});
+
+
 
 
 

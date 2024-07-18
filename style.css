@@ -502,6 +502,7 @@ span{
 }
 
 
+
 .timeline-content3 .timeline-text h3{
     font-size: 26px;
     color: white;
@@ -635,6 +636,46 @@ span{
 
 
 
+.timeline-content4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Set width to 100% to match parent width */
+    max-width: 1000px; /* Optionally, set a maximum width */
+    height: 300px;
+    background-color: var(--bg-color);
+    padding: 15px;
+    border-radius: 4rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin: 40px auto; /* Center horizontally using auto margins */
+    position: relative;
+    overflow: hidden;
+}
+.timeline-content4 .timeline-image{
+    width: 350px;
+    max-width: 350px; 
+    height: 300px; 
+    border-radius: 4rem; 
+    margin-right: 20px; 
+    margin-left: -15px
+}
+
+
+.timeline-content4 .timeline-image2 {
+    width: 350px;
+    max-width: 350px; 
+    height: 300px; 
+    border-radius: 4rem; 
+    margin-right: 20px; 
+    margin-left: -15px;
+}
+
+.timeline-content4 .timeline-text {
+    flex: 1;
+    padding: 10px;
+}
 .hover-layer2 {
     position: absolute;
     top: 0;
@@ -656,14 +697,50 @@ span{
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
-.timeline-content3:hover .hover-layer2 {
+.timeline-content4:hover .hover-layer2 {
     opacity: 1;
 }
-
-.timeline-content3:hover .hover-layer2 img {
+.timeline-content4:hover .hover-layer2 img {
     opacity: 1;
 }
+.timeline-content4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.timeline-content4 .timeline-text h3 {
+    font-size: 26px;
+    color: white;
+    margin: 0 0 10px;
+    font-weight: 700;
+}
+.timeline-content4 .timeline-text p {
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+@media (max-width: 768px) {
+    .timeline-content4 {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: auto;
+        width: 360px;
+    }
+    .timeline-content4 .timeline-image,
+    .timeline-content4 .timeline-image2 {
+        margin: 0 0 20px;
+        margin-top: -20px;
+    }
+    .timeline-content4 .timeline-text,
+    .timeline-content4 .hover-layer2 {
+        text-align: center;
+    }
+    .timeline-content4 .hover-layer2 {
+        border-radius: 1rem;
+    }
+}
+
 
 
 
@@ -779,6 +856,8 @@ footer .social{
     color: white;
 }
 
+
+
 @media(max-width:1285px) {
     html {
         font-size: 55%;
@@ -841,28 +920,27 @@ footer .social{
     #menu-icon{
         display: block;
     }
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.8); 
-        backdrop-filter: blur (20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
+
+    .navbar {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* adjust as needed */
+        right: 0;
+        width: 75%;
+        background: rgba(0, 0, 0, 0.8); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .navbar .active{
-        display: block;
+
+    .navbar.active {
+        display: flex;
     }
-    .navbar .a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: white;
+
+    .navbar a {
+        padding: 15px 20px;
     }
+
+    
     .home{
         flex-direction: column-reverse;
         margin: 5rem 4rem;
